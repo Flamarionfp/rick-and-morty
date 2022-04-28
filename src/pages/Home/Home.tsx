@@ -19,8 +19,7 @@ export const Home: React.FC = () => {
   }, [])
 
   return (
-    <Flex style={{ padding: '30px' }}>
-      <h2>Hello World</h2>
-    </Flex>
+    <Flex />
+
   );
 }
