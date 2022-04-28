@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Flex } from '../../styles/Flex'
 import { api } from '../../services/api'
-import { CharacterProps } from '../../components/interfaces/character.types'
+import { CharacterProps } from '../../interfaces/character.types'
 
 export const Home: React.FC = () => {
   const [data, setData] = useState<CharacterProps>({} as CharacterProps)
