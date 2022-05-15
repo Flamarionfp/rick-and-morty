@@ -11,7 +11,7 @@ export const CharacterCard: React.FC<CharacterData> = ({ image, name, species, s
         <Image src={image} w="100%" h="100%" />
         <TextWrapper>
           <CharacterName title={name}>{name}</CharacterName>
-          <Text>{`Espécie: ${getTranslatedSpecie(species)}`}</Text>
+          <Text title={species}>{`Espécie: ${getTranslatedSpecie(species) ?? species}`}</Text>
           <Text>{`Status: ${getTranslatedStatus(status)}`}</Text>
           <Text>{`Gênero: ${getTranslatedGender(gender)}`}</Text>
         </TextWrapper>

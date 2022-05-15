@@ -22,4 +22,7 @@ export const Text = styled.p`
   padding-left: 5px;
   padding-right: 5px;
   line-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
