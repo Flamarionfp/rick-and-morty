@@ -1,10 +1,11 @@
+export type specietype = "Human" | "Humanoid" | "Alien" | "unknown";
 export type statusType = "Alive" | "Dead" | "unknown";
 export type genderType = "Female" | "Male" | "Genderless" | "unknown";
 export interface CharacterData {
   id: number;
   name: string,
   status: statusType,
-  species: string,
+  species: specietype,
   type: string,
   gender: genderType,
   origin: {

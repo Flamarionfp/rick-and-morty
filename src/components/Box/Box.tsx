@@ -3,7 +3,7 @@ import { BoxContainer } from './Box.style'
 
 export const Box: React.FC<BoxProps> = ({ children }) => {
   return (
-    <BoxContainer>
+    <BoxContainer cursor='pointer'>
       {children}
     </BoxContainer>
   );

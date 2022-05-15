@@ -6,6 +6,21 @@
 
 body {
   background-image: url("/images/wallpaper.jpg");
-  background-size: cover;
+  background-size: contain;
+  background-attachment: fixed;
   font-family: "Roboto", sans-serif;
+}
+
+html ::-webkit-scrollbar {
+  width: 8px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #c32f2f;
+}
+
+html ::-webkit-scrollbar-track {
+  background: #ededed;
+  border-radius: 12px;
 }

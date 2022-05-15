@@ -1,4 +1,15 @@
-import { statusType, genderType } from '../interfaces/character.types'
+import { specietype, statusType, genderType } from '../interfaces/character.types'
+
+export function getTranslatedSpecie(specie: specietype) {
+  const options = {
+    'Human': 'Humano',
+    'Humanoid': 'Humano semelhante',
+    'Alien': 'Alienígena',
+    'unknown': 'Desconhecida',
+  };
+
+  return options[specie];
+}
 
 export function getTranslatedStatus(status: statusType) {
   const options = {
@@ -9,7 +20,6 @@ export function getTranslatedStatus(status: statusType) {
 
   return options[status];
 };
-
 
 export function getTranslatedGender(gender: genderType) {
   const options = {
