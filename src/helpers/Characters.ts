@@ -3,7 +3,7 @@ import { specietype, statusType, genderType } from '../interfaces/character.type
 export function getTranslatedSpecie(specie: specietype) {
   const options = {
     'Human': 'Humano',
-    'Humanoid': 'Humano semelhante',
+    'Humanoid': 'Semelhante humano',
     'Alien': 'Alienígena',
     'unknown': 'Desconhecida',
   };

@@ -2,9 +2,6 @@ import { PaginationProps } from './Pagination.types'
 import { PaginationButton, PaginationText } from './Pagination.style'
 
 export const Pagination: React.FC<PaginationProps> = ({
-  prev,
-  next,
-  pages: numberOfPages,
   currentPage,
   handlePageClick = () => null
 }) => {

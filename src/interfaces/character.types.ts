@@ -21,11 +21,13 @@ export interface CharacterData {
   url: string;
   created: Date;
 }
-
-export interface CharacterProps {
+interface InfoProps {
   count: number;
   pages: number;
   next: string;
   prev: string;
+}
+export interface CharacterProps {
+  info: InfoProps;
   results: CharacterData[];
 }
