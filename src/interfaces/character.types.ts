@@ -1,10 +1,12 @@
-interface CharacterData {
+export type statusType = "Alive" | "Dead" | "unknown";
+export type genderType = "Female" | "Male" | "Genderless" | "unknown";
+export interface CharacterData {
   id: number;
   name: string,
-  status: "Alive" | "Dead" | "unknown"
+  status: statusType,
   species: string,
   type: string,
-  gender: "Female" | "Male" | "Genderless" | "unknown";
+  gender: genderType,
   origin: {
     name: string;
     url: string;

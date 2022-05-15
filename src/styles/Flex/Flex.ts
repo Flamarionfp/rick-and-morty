@@ -7,4 +7,6 @@ export const Flex = styled.div<FlexProps>`
   direction: ${(props) => props.column ? 'column' : 'row'};
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.alignItems};
+  flex-wrap: ${(props) => props.flexWrap ?? 'no-wrap'};
+  gap: ${(props) => props.gap};
 `;

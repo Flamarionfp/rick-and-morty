@@ -5,6 +5,7 @@
 }
 
 body {
-  background-image: url("../../public/images/wallpaper.jpg");
+  background-image: url("/images/wallpaper.jpg");
   background-size: cover;
+  font-family: "Roboto", sans-serif;
 }

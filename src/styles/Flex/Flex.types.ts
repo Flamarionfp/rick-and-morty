@@ -3,4 +3,6 @@ export interface FlexProps {
   column?: boolean;
   justifyContent?: 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'center';
   alignItems?: 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'center';
+  flexWrap?: 'wrap' | 'no-wrap';
+  gap?: string;
 }
