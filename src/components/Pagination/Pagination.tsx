@@ -9,8 +9,9 @@ export const Pagination: React.FC<PaginationProps> = ({
   handlePagePrev = () => null,
   handlePageNext = () => null,
 }) => {
-  const [pagesNumber, setPagesNumber] = useState(3)
-  const pages = new Array(pagesNumber).fill(null)
+  const maxButtonsToShow = 3
+  const [currentMaxPage, setCurrentMaxPage] = useState(maxButtonsToShow)
+  const pages = new Array(currentMaxPage).fill(null)
 
   return (
     <>
@@ -31,8 +32,8 @@ export const Pagination: React.FC<PaginationProps> = ({
       })}
       <PaginationButton onClick={() => {
         handlePageNext(currentPage, numberOfPages, false)
-        if (currentPage === pagesNumber) {
-          setPagesNumber(pagesNumber + 3)
+        if (currentPage === currentMaxPage) {
+          setCurrentMaxPage(currentMaxPage + maxButtonsToShow)
         }
       }}>
         ...
