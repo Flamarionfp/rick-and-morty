@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PaginationProps } from './Pagination.types'
 import { PaginationButton, PaginationText } from './Pagination.style'
+import { Image } from '../../styles';
 
 export const Pagination: React.FC<PaginationProps> = ({
   currentPage,
@@ -24,7 +25,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           }
         }}
         disabled={currentPage === 1}>
-        ...
+        <Image src='public/images/chevron_left.svg' w="10px" h="10px" />
       </PaginationButton>
       {pages.map((_, index) => {
         const paginationNumber = index + 1
@@ -51,7 +52,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         }}
         disabled={currentPage === numberOfPages}
       >
-        ...
+        <Image src='public/images/chevron_right.svg' w="10px" h="10px" />
       </PaginationButton>
 
     </>
