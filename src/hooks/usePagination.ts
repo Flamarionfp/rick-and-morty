@@ -9,15 +9,11 @@ export const usePagination = () => {
   }, [])
 
   const handlePagePrev = useCallback((pageNumber: number, prevAll: boolean = false) => {
-    if (currentPage >= 1) {
-      setCurrentPage(prevAll ? initalPage : pageNumber - 1)
-    }
+    setCurrentPage(prevAll ? initalPage : pageNumber - 1)
   }, [])
 
   const handlePageNext = useCallback((pageNumber: number, numberOfPages: number, nextAll: boolean = false) => {
-    if (currentPage !== numberOfPages) {
-      setCurrentPage(nextAll ? numberOfPages : pageNumber + 1)
-    }
+    setCurrentPage(nextAll ? numberOfPages : pageNumber + 1)
   }, [])
 
   return { currentPage, handlePageClick, handlePagePrev, handlePageNext }
