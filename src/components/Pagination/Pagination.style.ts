@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { PaginationButtonProps } from './Pagination.types';
 
-export const PaginationButton = styled.div<PaginationButtonProps>`
+export const PaginationButton = styled.button<PaginationButtonProps>`
   cursor: pointer;
   padding: 10px;
   background-color: blue;

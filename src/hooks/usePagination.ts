@@ -11,7 +11,6 @@ export const usePagination = () => {
   const handlePagePrev = useCallback((pageNumber: number, prevAll: boolean = false) => {
     if (currentPage >= 1) {
       setCurrentPage(prevAll ? initalPage : pageNumber - 1)
-      console.log(`é maior ou igual que 1, página atual: ${currentPage}`)
     }
   }, [])
 
