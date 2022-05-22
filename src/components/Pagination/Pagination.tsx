@@ -21,13 +21,16 @@ export const Pagination: React.FC<PaginationProps> = ({
       {pages.map((_, index) => {
         const paginationNumber = index + 1
         return (
-          <PaginationButton
-            onClick={() => handlePageClick(paginationNumber)}
-            isActive={paginationNumber === currentPage}
-          >
-            <PaginationText>{paginationNumber}</PaginationText>
-          </PaginationButton>
-
+          <>
+            {paginationNumber > currentMaxPage - maxButtonsToShow && (
+              <PaginationButton
+                onClick={() => handlePageClick(paginationNumber)}
+                isActive={paginationNumber === currentPage}
+              >
+                <PaginationText>{paginationNumber}</PaginationText>
+              </PaginationButton>
+            )}
+          </>
         )
       })}
       <PaginationButton onClick={() => {
