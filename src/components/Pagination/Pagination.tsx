@@ -15,7 +15,15 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <>
-      <PaginationButton onClick={() => handlePagePrev(currentPage, false)}>
+      <PaginationButton
+        onClick={() => {
+
+          handlePagePrev(currentPage, false)
+          if (currentPage === currentMaxPage - 2) {
+            setCurrentMaxPage(currentMaxPage - maxButtonsToShow)
+          }
+        }}
+        disabled={currentPage === 1}>
         ...
       </PaginationButton>
       {pages.map((_, index) => {
@@ -33,16 +41,19 @@ export const Pagination: React.FC<PaginationProps> = ({
           </>
         )
       })}
-      {currentPage !== numberOfPages && (
-        <PaginationButton onClick={() => {
+
+      <PaginationButton
+        onClick={() => {
           handlePageNext(currentPage, numberOfPages, false)
           if (currentPage === currentMaxPage) {
             setCurrentMaxPage(currentMaxPage + maxButtonsToShow)
           }
-        }}>
-          ...
-        </PaginationButton>
-      )}
+        }}
+        disabled={currentPage === numberOfPages}
+      >
+        ...
+      </PaginationButton>
+
     </>
   )
 }
