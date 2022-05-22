@@ -1,5 +1,6 @@
 export interface PaginationProps {
   currentPage: number;
+  numberOfPages: number;
   handlePageClick: (page: number) => void;
   handlePagePrev: (pageNumber: number, prevAll: boolean) => void;
   handlePageNext: (pageNumber: number, numberOfPages: number, nextAll: boolean) => void;

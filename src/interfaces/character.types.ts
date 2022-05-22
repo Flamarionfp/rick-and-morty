@@ -1,4 +1,4 @@
-export type specietype = "Human" | "Humanoid" | "Alien" | "unknown";
+export type specietype = "Human" | "Alien" | "unknown";
 export type statusType = "Alive" | "Dead" | "unknown";
 export type genderType = "Female" | "Male" | "Genderless" | "unknown";
 export interface CharacterData {

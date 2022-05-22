@@ -8,19 +8,16 @@ export const usePagination = () => {
     setCurrentPage(pageNumber)
   }, [])
 
-  const handlePagePrev = useCallback((pageNumber: number, prevAll: boolean) => {
-    if (prevAll) {
-      setCurrentPage(1)
-    } else {
-      setCurrentPage(pageNumber - 1)
+  const handlePagePrev = useCallback((pageNumber: number, prevAll: boolean = false) => {
+    if (currentPage >= 1) {
+      setCurrentPage(prevAll ? initalPage : pageNumber - 1)
+      console.log(`é maior ou igual que 1, página atual: ${currentPage}`)
     }
   }, [])
 
-  const handlePageNext = useCallback((pageNumber: number, numberOfPages: number, nextAll: boolean) => {
-    if (nextAll) {
-      setCurrentPage(numberOfPages)
-    } else {
-      setCurrentPage(pageNumber + 1)
+  const handlePageNext = useCallback((pageNumber: number, numberOfPages: number, nextAll: boolean = false) => {
+    if (currentPage !== numberOfPages) {
+      setCurrentPage(nextAll ? numberOfPages : pageNumber + 1)
     }
   }, [])
 

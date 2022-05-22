@@ -41,6 +41,7 @@ export const Home: React.FC = () => {
         <Flex gap="5px">
           <Pagination
             currentPage={currentPage}
+            numberOfPages={data?.info?.pages}
             handlePageClick={handlePageClick}
             handlePagePrev={handlePagePrev}
             handlePageNext={handlePageNext}

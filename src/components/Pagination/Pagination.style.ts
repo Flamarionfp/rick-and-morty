@@ -8,6 +8,7 @@ export const PaginationButton = styled.div<PaginationButtonProps>`
   border-radius: 4px;
   min-width: 50px;
   background-color: ${(props) => props.isActive ? '#c32f2f' : '#fff'};
+  background-image: url("/images/chevron.svg");
 `;
 
 export const PaginationText = styled.p`
