@@ -5,7 +5,6 @@ interface CharactersContainer {
 }
 
 export const CharactersContainer = styled.div<CharactersContainer>`
-  margin-top: 50px;
   max-height: ${(props) => props.maxH};
   overflow-y: hidden;
 `;

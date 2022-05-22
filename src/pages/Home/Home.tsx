@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Flex } from '../../styles'
 import { api } from '../../services/api'
 import { CharacterProps } from '../../interfaces/character.types'
-import { Characters, Pagination } from '../../components'
+import { Header, Characters, Pagination } from '../../components'
 import { CharactersContainer, PaginationWrapper, ExpandButton } from '../Home/Home.style'
 import { usePagination } from '../../hooks';
 import '../../styles/index.css'
@@ -31,6 +31,7 @@ export const Home: React.FC = () => {
 
   return (
     <React.Fragment>
+      <Header />
       <CharactersContainer maxH={isExpanded ? '100%' : '350px'}>
         <Flex flexWrap='wrap' gap="25px" justifyContent='center'>
           <Characters {...data} />
