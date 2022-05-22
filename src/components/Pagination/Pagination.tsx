@@ -25,7 +25,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           }
         }}
         disabled={currentPage === 1}>
-        <Image src='public/images/chevron_left.svg' w="10px" h="10px" />
+        <Image src='/images/chevron_left.svg' w="10px" h="10px" />
       </PaginationButton>
       {pages.map((_, index) => {
         const paginationNumber = index + 1
@@ -51,7 +51,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         }}
         disabled={currentPage === numberOfPages}
       >
-        <Image src='public/images/chevron_right.svg' w="10px" h="10px" />
+        <Image src='/images/chevron_right.svg' w="10px" h="10px" />
       </PaginationButton>
 
     </>
