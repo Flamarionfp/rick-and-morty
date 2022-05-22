@@ -42,7 +42,6 @@ export const Pagination: React.FC<PaginationProps> = ({
           </>
         )
       })}
-
       <PaginationButton
         onClick={() => {
           handlePageNext(currentPage, numberOfPages, false)
