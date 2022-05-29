@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Input } from './SearchInput.styles'
+import { CharactersContext } from '../../contexts'
 
 export const SearchInput: React.FC = () => {
-  const [searchedTerm, setSearchedTerm] = useState('')
+  const { searchedTerm, updateSearchedTerm = () => null } = useContext(CharactersContext)
 
-  const handleChange = () => {
-    setSearchedTerm(searchedTerm)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateSearchedTerm(e.target.value)
   }
 
   return (

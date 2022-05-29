@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { CharacterData } from '../../interfaces'
 import { CharacterCard } from './CharacterCard'
 import { CharactersContext } from '../../contexts'
 
