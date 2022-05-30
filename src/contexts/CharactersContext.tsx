@@ -5,6 +5,7 @@ import { CharacterProps } from '../interfaces/character.types'
 import { getQueryParams } from '../helpers'
 
 interface CharacterContextProps {
+  isLoading: boolean,
   data: CharacterProps
   currentPage: number,
   searchedTerm: string,
@@ -15,6 +16,7 @@ interface CharacterContextProps {
 }
 
 export const CharactersContext = createContext<CharacterContextProps>({
+  isLoading: false,
   data: {} as CharacterProps,
   currentPage: 0,
   searchedTerm: "",
@@ -25,6 +27,7 @@ export const CharactersContext = createContext<CharacterContextProps>({
 })
 
 export const CharactersContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(false)
   const { currentPage, handlePageClick, handlePagePrev, handlePageNext } = usePagination()
   const [characters, setCharacters] = useState<CharacterProps>({} as CharacterProps)
   const [searchedTerm, setSearchedTerm] = useState('')
@@ -41,9 +44,18 @@ export const CharactersContextProvider: React.FC<{ children: React.ReactNode }> 
 
   useEffect(() => {
     async function fetchCharacters() {
-      const { status, data } = await api.get(characterEndpoint)
-      if (status === 200) {
-        setCharacters(data)
+      try {
+        setIsLoading(true)
+        const { status, data } = await api.get(characterEndpoint)
+        if (status === 200) {
+          setCharacters(data)
+        }
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 1000)
       }
     }
 
@@ -51,6 +63,7 @@ export const CharactersContextProvider: React.FC<{ children: React.ReactNode }> 
   }, [currentPage, searchedTerm])
 
   const contextData = {
+    isLoading,
     data: characters,
     currentPage,
     searchedTerm,

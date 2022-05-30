@@ -13,7 +13,7 @@ export const PaginationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 7%;
+  margin: 15px 7%;
 `;
 
 export const ExpandButton = styled.button`

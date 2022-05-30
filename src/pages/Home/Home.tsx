@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Flex } from '../../styles'
-import { Header, Characters, Pagination } from '../../components'
+import { Header, Characters, Pagination, CharactersSkeleton } from '../../components'
 import { CharactersContainer, PaginationWrapper, ExpandButton } from '../Home/Home.style'
 import { CharactersContext } from '../../contexts/CharactersContext'
-import { usePagination } from '../../hooks'
 import '../../styles/index.css'
 
+
 export const Home: React.FC = () => {
-  const { data, currentPage, handlePageClick, handlePagePrev, handlePageNext } = useContext(CharactersContext)
+  const { isLoading, data, currentPage, handlePageClick, handlePagePrev, handlePageNext } = useContext(CharactersContext)
   const [isExpanded, setIsExpanded] = useState(false)
 
   function handleSeeMore() {
@@ -19,7 +19,13 @@ export const Home: React.FC = () => {
       <Header />
       <CharactersContainer maxH={isExpanded ? '100%' : '350px'}>
         <Flex flexWrap='wrap' gap="25px" justifyContent='center'>
-          <Characters />
+          {!isLoading ? (
+            <Characters />
+          ) : (
+            new Array(isExpanded ? 20 : 6).fill(null).map((_, index) => (
+              <CharactersSkeleton key={index} />
+            ))
+          )}
         </Flex>
       </CharactersContainer>
       <PaginationWrapper>

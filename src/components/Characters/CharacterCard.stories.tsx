@@ -6,6 +6,7 @@ export default {
   component: CharacterCard,
 } as ComponentMeta<typeof CharacterCard>;
 
+
 const Template: ComponentStory<typeof CharacterCard> = (args) => <CharacterCard {...args} />;
 
 export const _CharacterCard = Template.bind({});
